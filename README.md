@@ -1,4 +1,4 @@
-<div style="text-align:center"><img src="cover.jpg" /></div>
+<p align="center"><img src="cover.jpg" /></p>
 
 # 👾 Space_Invaders ([Editor's Choice on simmer.io](https://sharemygame.com/@realYMYPlus/space-invaders))
 Space Invaders is the first fixed shoot 'em up game in the world designed by Tomohiro Nishikado. It is the best-selling game of all arcade games. I migrated the classic/earliest [1978 version](https://www.youtube.com/watch?v=MU4psw3ccUI) to PC via C# and Unity. I tried to mimic the original game as much as possible except for 2 small differences:

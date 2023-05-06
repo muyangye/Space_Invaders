@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +17,9 @@ public class GameManager : MonoBehaviour
     private GameObject icon1;
     private GameObject icon2;
     private GameObject icon3;
+    private Vector3 icon1Pos = new Vector3(2.7f, 3.12f, 0);
+    private Vector3 icon2Pos = new Vector3(3.6f, 3.12f, 0);
+    private Vector3 icon3Pos = new Vector3(4.5f, 3.12f, 0);
 
     // Define Endgame UI texts
     private GameObject gameOver;
@@ -42,22 +44,22 @@ public class GameManager : MonoBehaviour
         // Show 3 life icons if player has 3 lives
         if (life == 3)
         {
-            icon1 = Instantiate(lifeIcon, new Vector3(2.7f, 3.12f, 0), Quaternion.identity);
-            icon2 = Instantiate(lifeIcon, new Vector3(3.6f, 3.12f, 0), Quaternion.identity);
-            icon3 = Instantiate(lifeIcon, new Vector3(4.5f, 3.12f, 0), Quaternion.identity);
+            icon1 = Instantiate(lifeIcon, icon1Pos, Quaternion.identity);
+            icon2 = Instantiate(lifeIcon, icon2Pos, Quaternion.identity);
+            icon3 = Instantiate(lifeIcon, icon3Pos, Quaternion.identity);
         }
 
         // Show 2 life icons if player has 2 lives
         if (life == 2)
         {
-            icon1 = Instantiate(lifeIcon, new Vector3(2.7f, 3.12f, 0), Quaternion.identity);
-            icon2 = Instantiate(lifeIcon, new Vector3(3.6f, 3.12f, 0), Quaternion.identity);
+            icon1 = Instantiate(lifeIcon, icon1Pos, Quaternion.identity);
+            icon2 = Instantiate(lifeIcon, icon2Pos, Quaternion.identity);
         }
 
         // Show 1 life icons if player has 1 live
         if (life == 1)
         {
-            icon1 = Instantiate(lifeIcon, new Vector3(2.7f, 3.12f, 0), Quaternion.identity);
+            icon1 = Instantiate(lifeIcon, icon1Pos, Quaternion.identity);
         }
     }
 

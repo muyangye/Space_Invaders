@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
@@ -26,7 +25,7 @@ public class EnemyBullet : MonoBehaviour
             if (index >= animSprites.Length)
                 index = 0;
             spRenderer.sprite = animSprites[index];
-            index++;
+            ++index;
             yield return new WaitForSeconds(waitTime);
         }
     }

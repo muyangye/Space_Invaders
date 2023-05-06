@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UFOSpawner : MonoBehaviour
@@ -8,9 +6,10 @@ public class UFOSpawner : MonoBehaviour
 
     public UFO ufoPrefab;
     private UFO ufo;
-    float cooldown = 0.0f;
+    private float cooldown = 0.0f;
     public float minCooldown = 10.0f;
     public float maxCooldown = 20.0f;
+    private Vector3 spawnPos = new Vector3(7.0f, 2.5f, 0.0f);
 
     void Awake()
     {
@@ -28,7 +27,7 @@ public class UFOSpawner : MonoBehaviour
 
     void SpawnUFO()
     {
-        ufo = ufo = Instantiate(ufoPrefab, new Vector3(7.0f, 2.5f, 0.0f), Quaternion.identity);
+        ufo = ufo = Instantiate(ufoPrefab, spawnPos, Quaternion.identity);
         cooldown = Random.Range(minCooldown, maxCooldown);
     }
 }

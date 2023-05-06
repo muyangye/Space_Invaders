@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,7 +32,7 @@ public class UFO : MonoBehaviour
             moveUFO();
         }
 
-        if (gameObject.transform.position.x < -6)
+        if (gameObject.transform.position.x < -6.0f)
         {
             destroyUFO();
         }
@@ -64,17 +62,17 @@ public class UFO : MonoBehaviour
             // Randomly add 50, 100, or 200 points
             if (randNum == 0)
             {
-                gameManager.score = gameManager.score + 50;
+                gameManager.score += 50;
                 spRenderer.sprite = scoreSprites[0];
             }
             else if (randNum == 1)
             {
-                gameManager.score = gameManager.score + 100;
+                gameManager.score += 100;
                 spRenderer.sprite = scoreSprites[1];
             }
             else if (randNum == 2)
             {
-                gameManager.score = gameManager.score + 150;
+                gameManager.score += 150;
                 spRenderer.sprite = scoreSprites[2];
             }
 

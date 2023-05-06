@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +12,7 @@ public class MenuButton : MonoBehaviour
     public void ChangeWhenEnter()
     {
         // Change color to green upon hovering
-        theText.color = new Color(0F, 255F, 0);
+        theText.color = new Color(0.0f, 255.0f, 0.0f);
     }
 
     public void ChangeWhenLeave()

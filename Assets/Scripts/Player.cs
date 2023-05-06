@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 
     private IVPositions ivPositions;
 
+    private float leftBoundary = -5.2f;
+    private float rightBoundary = 5.2f;
+
     void Start()
     {
         audios = GetComponents<AudioSource>();
@@ -48,13 +51,13 @@ public class Player : MonoBehaviour
         if (ivPositions.active == true)
         {
             // If the player touches the left boundary
-            if (transform.position.x <= -5.2)
+            if (transform.position.x <= leftBoundary)
             {
                 // Can only move right
                 MoveRight();
             }
             // If the player touches the right boundary
-            else if (transform.position.x >= 5.2)
+            else if (transform.position.x >= rightBoundary)
             {
                 // Can only move left
                 MoveLeft();

@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BunkerPart : MonoBehaviour
 {
     private int hitCount = 0;
+    private float life = 3;
 
     private void Start()
     {
@@ -19,11 +18,11 @@ public class BunkerPart : MonoBehaviour
             return;
         }
         ++hitCount;
-        if (hitCount == 3)
+        if (hitCount == life)
         {
             Destroy(gameObject);
         }
-        Color damagedColor = new Color32(0, 255, 0, (byte)((3 - hitCount) / 3.0f * 255));
+        Color damagedColor = new Color32(0, 255, 0, (byte)((life - hitCount) / 3.0f * 255));
         gameObject.GetComponent<Renderer>().material.color = damagedColor;
     }
 }

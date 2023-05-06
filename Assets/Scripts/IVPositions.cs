@@ -14,9 +14,13 @@ public class IVPositions : MonoBehaviour
 
     // Define Invaders direction and movement speed
     public Vector3 direction = new Vector3(1.0f, 0f, 0f);
+    // 960 x 600 resolution
+    private Vector3 moveDownOffset = new Vector3(0f, -0.24f, 0f);
+    private float leftBoundary = -5.2f;
+    private float rightBoundary = 5.1f;
     public float speed = 0.2f;
-    private float baseMoveCooldown = 1.0f;
 
+    private float baseMoveCooldown = 1.0f;
     // Essentially these 2 floats are always the same, but for clarity name 2 variables
     private float moveCooldown = 1.0f;
     private float invaderAnimTime = 1.0f;
@@ -79,7 +83,7 @@ public class IVPositions : MonoBehaviour
             transform.position += direction * speed;
             foreach (Transform invader in transform)
             {
-                if (invader.position.x <= -5.2f || invader.position.x >= 5.1f)
+                if (invader.position.x <= leftBoundary || invader.position.x >= rightBoundary)
                 {
                     MoveDownAndChangeDirection(invader.position.x);
                     break;
@@ -121,7 +125,7 @@ public class IVPositions : MonoBehaviour
     void MoveDownAndChangeDirection(float x)
     {
         direction *= -1;
-        transform.position += new Vector3(0f, -0.24f, 0f);
+        transform.position += moveDownOffset;
     }
 
     IEnumerator Reset()
